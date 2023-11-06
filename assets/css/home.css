@@ -1,0 +1,183 @@
+body {
+  margin: 0;
+  text-align: center;
+}
+
+.main-container {
+  align-items: center;
+  margin: 0 10vw 10vh 10vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.task-input {
+  border: 1px solid lightgrey;
+  border-style: solid none;
+  padding: 5px;
+}
+
+.heading {
+  text-align: left;
+  padding: 5px;
+}
+
+.description {
+  width: 75vw;
+  height: 5vh;
+  border: none;
+  outline: none;
+  font-size: large;
+}
+
+.middle-div {
+  width: 75vw;
+  border: 1px solid lightgrey;
+  border-style: none none solid none;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  justify-content: space-between;
+}
+
+.select-category-div {
+  flex: 1 1 0;
+  border: 1px solid lightgrey;
+  border-style: none solid none none;
+}
+.select-date-div {
+  flex: 1 1 0;
+  padding-left: 5x;
+}
+
+.category {
+  border: none;
+  outline: none;
+  background-color: white;
+  justify-self: left;
+  font-size: large;
+}
+
+.category:hover {
+  cursor: pointer;
+}
+
+.date {
+  border: none;
+  outline: none;
+  background-color: white;
+  justify-self: left;
+  font-size: large;
+}
+
+.date:hover {
+  cursor: pointer;
+}
+
+.btns {
+  width: 75vw;
+  justify-items: space-around;
+  justify-items: center;
+  margin-top: 3vh;
+}
+
+button {
+  height: 8vh;
+  font-size: xx-large;
+  width: 20vw;
+  color: white;
+  border-radius: 3px;
+}
+#add-btn {
+  border: none;
+  background-color: rgb(76, 68, 68);
+  opacity: 0.9;
+}
+
+#delete-btn {
+  border: none;
+  background-color: red;
+  opacity: 0.8;
+}
+
+#delete-btn:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+#add-btn:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+.taks-list {
+  width: 75vw;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid lightgrey;
+  border-style: solid none none none;
+  width: 75vw;
+  font-size: large;
+}
+
+.left-listItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.checkbox {
+  margin-right: 1vw;
+}
+
+.category-tag {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 4vh;
+  height: 4vh;
+  width: 6vw;
+  background-color: rgb(172, 100, 180);
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.category-tag span {
+  color: white;
+  margin-top: 0.5vh;
+}
+
+.category-red {
+  background-color: skyblue;
+  color: white;
+}
+
+.category-blue {
+  background-color: blue;
+  color: white;
+}
+
+.category-green {
+  background-color: green;
+  color: white;
+}
+
+.category-orange {
+  background-color: orange;
+  color: white;
+}
+
+.category-purple {
+  background-color: purple;
+  color: white;
+}

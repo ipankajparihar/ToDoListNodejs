@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <title><%= title %>S</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <h1>TODO List</h1>
+
+      <form action="/addTask" method="POST">
+        <div class="task-input">
+          <h3 class="heading">DESCRIPTION</h3>
+          <input
+            class="description"
+            type="text"
+            name="task"
+            placeholder="write your taks here"
+            required
+          />
+        </div>
+        <div class="middle-div">
+          <div class="select-category-div">
+            <h3 class="heading">CATEGOREY</h3>
+            <select class="category" name="category" required>
+              <option hidden value="">Select Category</option>
+              <option value="school">School</option>
+              <option value="work">Work</option>
+              <option value="personal">Personal</option>
+              <option value="hobby">Hobby</option>
+              <option value="extra">Extra</option>
+            </select>
+          </div>
+          <div class="select-date-div">
+            <h3 class="heading">DUE DATE</h3>
+            <input
+              class="date"
+              name="date"
+              type="date"
+              placeholder="dd/mm/yy"
+              required
+            />
+          </div>
+        </div>
+        <div class="btns">
+          <button type="submit" id="add-btn">
+            <i class="fa fa-plus" style="margin-right: 1vw"></i>Add Task
+          </button>
+
+          <button formaction="/deleteTasks" type="submit" id="delete-btn">
+            <i class="fa fa-trash" style="margin-right: 1vw"></i>Delete Tasks
+          </button>
+        </div>
+      </form>
+
+      <div class="task-list">
+        <ul>
+          <% for (let i of toDoList) { %>
+          <li>
+            <div class="list-item">
+              <div class="left-listItem">
+                <form action="/updateTask/?id=<%= i._id%>" method="POST">
+                  <input
+                    class="checkbox"
+                    name="checkbox"
+                    type="checkbox"
+                    value="<%= i.isChecked%>"
+                    onchange="handleCheck()"
+                  />
+                </form>
+
+                <div class="task">
+                  <h3 style><%= i.task %></h3>
+                  <p>
+                    <%= i.date %><i
+                      style="margin-left: 10px; color: grey"
+                      class="fa fa-calendar"
+                    ></i>
+                  </p>
+                </div>
+              </div>
+
+              <% if (i.category === 'school') { %>
+              <div class="category-tag category-red">
+                <span><%= i.category %></span>
+              </div>
+              <% } else if (i.category === 'personal') { %>
+              <div class="category-tag category-blue">
+                <span><%= i.category %></span>
+              </div>
+              <% } else if (i.category === 'extra') { %>
+              <div class="category-tag category-green">
+                <span><%= i.category %></span>
+              </div>
+              <% } else if (i.category === 'work') { %>
+              <div class="category-tag category-orange">
+                <span><%= i.category %></span>
+              </div>
+              <% } else if (i.category === 'hobby') { %>
+              <div class="category-tag category-purple">
+                <span><%= i.category %></span>
+              </div>
+              <% } else { %>
+              <div class="category-tag">
+                <span><%= i.category %></span>
+              </div>
+              <% } %>
+            </div>
+          </li>
+
+          <%}%>
+        </ul>
+      </div>
+    </div>
+    <script type="text/javascript" src="/js/index.js"></script>
+  </body>
+</html>
